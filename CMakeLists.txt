@@ -69,3 +69,6 @@ message(STATUS "############################## add_subdirectory is: StaticLib1 #
 add_subdirectory(StaticLib1)
 message(STATUS "############################## add_subdirectory is: StaticLib2 ##############################")
 add_subdirectory(StaticLib2)
+
+# set default startup project
+set_property( DIRECTORY PROPERTY VS_STARTUP_PROJECT "Example" )

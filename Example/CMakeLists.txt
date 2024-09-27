@@ -60,9 +60,6 @@ if(OS_WINDOWS)
 	StaticLib1
     StaticLib2
   )
-  
-  # set default startup project
-  set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME})
 
   add_custom_command(TARGET ${PROJECT_NAME}
     POST_BUILD

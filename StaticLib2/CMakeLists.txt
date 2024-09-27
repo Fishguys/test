@@ -1,5 +1,4 @@
 set(PROJECT_NAME "StaticLib2")
-project(${PROJECT_NAME})
 
 set(CMAKE_GLOBAL_AUTOGEN_TARGET OFF)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -16,11 +15,4 @@ source_group(
 
 if(OS_WINDOWS)
   add_library(${PROJECT_NAME} STATIC ${StaticLib2_SOURCE_FILES})
-
-  target_compile_definitions(${PROJECT_NAME} PRIVATE
-	UNICODE
-	_UNICODE
-	_DEBUG
-	DLL2_EXPORTS
-  )
 endif() # OS_WINDOWS
