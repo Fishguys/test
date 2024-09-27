@@ -1,5 +1,4 @@
 ﻿// dllmain.cpp : 定义 DLL 应用程序的入口点。
-#include "pch.h"
 #include <windows.h>
 #include <tlhelp32.h>
 #include <stdio.h>
