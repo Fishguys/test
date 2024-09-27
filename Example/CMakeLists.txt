@@ -64,6 +64,14 @@ if(OS_WINDOWS)
   # set default startup project
   set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME})
 
+  add_custom_command(TARGET ${PROJECT_NAME}
+    POST_BUILD
+
+    # Copy Dll binary to output folder
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    $<TARGET_FILE_DIR:Dll1>
+    $<TARGET_FILE_DIR:${PROJECT_NAME}>
+  )
 endif() # OS_WINDOWS
 
 message("CMAKE_CURRENT_BINARY_DIR is: ${CMAKE_CURRENT_BINARY_DIR}/output/$<CONFIG>/bin")

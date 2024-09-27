@@ -1,5 +1,5 @@
 //MyDll.h м╥нд╪Ч
-#ifdef DLL1_EXPORTS
+#ifdef Dll1_EXPORTS
 #define MYDLL_API __declspec(dllexport)
 #else
 #define MYDLL_API __declspec(dllimport)

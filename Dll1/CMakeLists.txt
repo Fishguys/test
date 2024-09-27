@@ -17,22 +17,6 @@ if(OS_WINDOWS)
   add_library(Dll1 SHARED ${Dll1_SOURCE_FILES})
 endif() # OS_WINDOWS
 
-if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-  target_compile_definitions(Dll1 PRIVATE
-	UNICODE
-	_UNICODE
-	_DEBUG
-	DLL1_EXPORTS
-  )
-else()
-  target_compile_definitions(Dll1 PRIVATE
-	UNICODE
-	_UNICODE
-	DLL1_EXPORTS
-	NOMINMAX
-  )
-endif()
-
 # 
 target_include_directories(Dll1 PRIVATE
   "${CMAKE_CURRENT_SOURCE_DIR}/../Dll2"

@@ -1,7 +1,7 @@
 #include <mutex>
 
 //MyDll.h м╥нд╪Ч
-#ifdef DLL2_EXPORTS
+#ifdef Dll2_EXPORTS
 #define MYDLL_API2 __declspec(dllexport)
 #else
 #define MYDLL_API2 __declspec(dllimport)

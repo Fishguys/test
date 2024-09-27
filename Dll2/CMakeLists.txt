@@ -15,11 +15,4 @@ source_group(
 
 if(OS_WINDOWS)
   add_library(Dll2 SHARED ${Dll2_SOURCE_FILES})
-
-  target_compile_definitions(Dll2 PRIVATE
-	UNICODE
-	_UNICODE
-	_DEBUG
-	DLL2_EXPORTS
-  )
 endif() # OS_WINDOWS
