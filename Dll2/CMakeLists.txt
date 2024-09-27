@@ -1,0 +1,25 @@
+project(Dll2)
+
+set(CMAKE_GLOBAL_AUTOGEN_TARGET OFF)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+file(GLOB Dll2_SOURCE_FILES
+  "${CMAKE_CURRENT_SOURCE_DIR}/*.h"
+  "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
+)
+source_group(
+  TREE ${CMAKE_CURRENT_SOURCE_DIR}
+  PREFIX Source
+  FILES ${Dll2_SOURCE_FILES}
+)
+
+if(OS_WINDOWS)
+  add_library(Dll2 SHARED ${Dll2_SOURCE_FILES})
+
+  target_compile_definitions(Dll2 PRIVATE
+	UNICODE
+	_UNICODE
+	_DEBUG
+	DLL2_EXPORTS
+  )
+endif() # OS_WINDOWS

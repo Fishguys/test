@@ -1,0 +1,26 @@
+set(PROJECT_NAME "StaticLib2")
+project(${PROJECT_NAME})
+
+set(CMAKE_GLOBAL_AUTOGEN_TARGET OFF)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+file(GLOB StaticLib2_SOURCE_FILES
+  "${CMAKE_CURRENT_SOURCE_DIR}/*.h"
+  "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
+)
+source_group(
+  TREE ${CMAKE_CURRENT_SOURCE_DIR}
+  PREFIX Source
+  FILES ${StaticLib2_SOURCE_FILES}
+)
+
+if(OS_WINDOWS)
+  add_library(${PROJECT_NAME} STATIC ${StaticLib2_SOURCE_FILES})
+
+  target_compile_definitions(${PROJECT_NAME} PRIVATE
+	UNICODE
+	_UNICODE
+	_DEBUG
+	DLL2_EXPORTS
+  )
+endif() # OS_WINDOWS
